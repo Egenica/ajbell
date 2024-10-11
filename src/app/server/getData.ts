@@ -8,12 +8,14 @@ export const fetchFundData = async (fund: string) => {
   }
 
   const response = await fetch(apiUrls[fund], {
-    cache: 'no-store',
+    cache: 'force-cache',
   });
 
   if (!response.ok) {
     throw new Error('Network response was not ok');
   }
+
+  console.log('x-cache:', response.headers.get('x-next-cache'));
 
   try {
     const data = await response.json();
