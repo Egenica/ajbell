@@ -15,8 +15,6 @@ export const fetchFundData = async (fund: string) => {
     throw new Error('Network response was not ok');
   }
 
-  console.log('x-cache:', response.headers.get('x-next-cache'));
-
   try {
     const data = await response.json();
     return data;
