@@ -11,7 +11,7 @@ const LoadingSpinner = ({
 }) => {
   return (
     <div
-      className="flex flex-row items-center justify-center p-3 h-52"
+      className="flex h-52 flex-row items-center justify-center p-3"
       role="status"
       aria-live="polite"
     >

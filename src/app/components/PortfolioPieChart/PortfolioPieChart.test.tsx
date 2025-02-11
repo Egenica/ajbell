@@ -1,10 +1,12 @@
 import '@testing-library/jest-dom';
-import React from 'react';
-import { render } from '@testing-library/react';
 import '@testing-library/jest-dom';
-import PortfolioPieChart from './PortfolioPieChart';
-import { colors } from './colors';
+
 import { ResponsivePie } from '@nivo/pie';
+import { render } from '@testing-library/react';
+import React from 'react';
+
+import { colors } from './colors';
+import PortfolioPieChart from './PortfolioPieChart';
 
 type PortfolioAsset = {
   label: string;
@@ -45,7 +47,7 @@ describe('PortfolioPieChart', () => {
 
   it('renders Tooltip with correct data', () => {
     const { container } = render(
-      <div className="p-1 bg-white border border-gray-300">
+      <div className="border border-gray-300 bg-white p-1">
         <strong>{mockDatum.id}</strong>: {mockDatum.value}%
       </div>
     );

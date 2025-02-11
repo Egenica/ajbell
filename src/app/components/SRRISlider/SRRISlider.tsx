@@ -13,11 +13,11 @@ export const SRRISlider = ({ srri }: { srri: number }) => {
   }
 
   return (
-    <div className="flex items-center mt-2">
+    <div className="mt-2 flex items-center">
       {[...Array(boxCount)].map((_, index) => (
         <div
           key={index}
-          className={`w-6 h-6 mx-1 rounded-sm 
+          className={`mx-1 h-6 w-6 rounded-sm 
                 ${index < srri ? 'border border-gray-700' : ''} 
                 ${index === srri - 1 ? 'border-4 border-black' : ''}`}
           style={{ backgroundColor: getColor(index) }}

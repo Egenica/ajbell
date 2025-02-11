@@ -1,4 +1,5 @@
-import { ResponsivePie, PieTooltipProps } from '@nivo/pie';
+import { PieTooltipProps, ResponsivePie } from '@nivo/pie';
+
 import { colors } from './colors';
 
 type PortfolioAsset = {
@@ -14,21 +15,21 @@ const PortfolioPieChart = ({ portfolio }: { portfolio: PortfolioAsset[] }) => {
   }));
 
   const Tooltip = ({ datum }: PieTooltipProps<PortfolioAsset>) => (
-    <div className="p-1 bg-white border border-gray-300">
+    <div className="border border-gray-300 bg-white p-1">
       <strong>{datum.id}</strong>: {datum.value}%
     </div>
   );
 
   return (
     <>
-      <div className="flex gap-1 md:gap-5 my-3 items-center justify-center">
+      <div className="my-3 flex items-center justify-center gap-1 md:gap-5">
         {data.map((item, i) => (
           <div key={item.id} className="legend-item flex items-center">
             <div
               style={{
                 backgroundColor: colors[i],
               }}
-              className="w-4 h-4 rounded-full mr-1"
+              className="mr-1 h-4 w-4 rounded-full"
             ></div>
             <span className="text-xs">{item.label}</span>
           </div>

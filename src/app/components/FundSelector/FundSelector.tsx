@@ -38,13 +38,13 @@ const FundSelector: React.FC<FundSelectorProps> = ({ onSelectFund }) => {
   };
 
   return (
-    <div className="p-6 border rounded-lg bg-white shadow-lg md:sticky md:top-6">
-      <h2 className="text-2xl font-bold mb-4">Choose a Strategy</h2>
+    <div className="rounded-lg border bg-white p-6 shadow-lg md:sticky md:top-6">
+      <h2 className="mb-4 text-2xl font-bold">Choose a Strategy</h2>
       <div className="mb-4">
-        <label className="block mb-2">
+        <label className="mb-2 block">
           Select Strategy:
           <select
-            className="w-full p-2 border rounded"
+            className="w-full rounded border p-2"
             value={strategy || ''}
             onChange={handleStrategyChange}
           >
@@ -57,10 +57,10 @@ const FundSelector: React.FC<FundSelectorProps> = ({ onSelectFund }) => {
 
       {strategy === 'growth' && (
         <div className="mb-4">
-          <label className="block mb-2">
+          <label className="mb-2 block">
             Select Growth Fund:
             <select
-              className="w-full p-2 border rounded"
+              className="w-full rounded border p-2"
               value={selectedFund}
               onChange={handleFundChange}
             >
@@ -77,9 +77,9 @@ const FundSelector: React.FC<FundSelectorProps> = ({ onSelectFund }) => {
 
       {strategy === 'responsible' && (
         <div className="mb-4">
-          <label className="block mb-2">Select Responsible Fund:</label>
+          <label className="mb-2 block">Select Responsible Fund:</label>
           <select
-            className="w-full p-2 border rounded"
+            className="w-full rounded border p-2"
             value={selectedFund}
             onChange={handleFundChange}
           >

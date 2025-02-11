@@ -1,9 +1,11 @@
-import React, { act } from 'react';
-import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import '@testing-library/jest-dom';
-import FundDetails from './FundDetails';
+
+import { fireEvent, render, screen, waitFor } from '@testing-library/react';
+import React, { act } from 'react';
+
 import { fetchFundData } from '../../server/getData';
 import { mockFundData } from './data.mock';
+import FundDetails from './FundDetails';
 
 jest.mock('../../server/getData');
 

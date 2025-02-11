@@ -1,7 +1,8 @@
 // useIntersectionObserver.test.ts
-import { render, screen, act } from '@testing-library/react';
-import useIntersectionObserver from './useIntersectionObserver';
+import { act, render, screen } from '@testing-library/react';
 import { useRef } from 'react';
+
+import useIntersectionObserver from './useIntersectionObserver';
 
 const TestComponent = () => {
   const ref = useRef(null);

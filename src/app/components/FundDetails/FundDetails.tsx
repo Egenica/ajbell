@@ -1,11 +1,12 @@
 'use client';
 
-import React, { useEffect, useState, lazy, Suspense } from 'react';
-import { StarRating } from '../StarRating/StarRating';
-import { SRRISlider } from '../SRRISlider/SRRISlider';
+import React, { lazy, Suspense, useEffect, useState } from 'react';
+
 import { fetchFundData } from '../../server/getData';
 import { Data } from '../../types/data';
 import LoadingSpinner from '../LoadingSpinner/LoadingSpinner';
+import { SRRISlider } from '../SRRISlider/SRRISlider';
+import { StarRating } from '../StarRating/StarRating';
 const PortfolioPieChart = lazy(
   () => import('../PortfolioPieChart/PortfolioPieChart')
 );
@@ -64,9 +65,9 @@ const FundDetails = ({ selectedFund }: FundDetailsProps) => {
   } = fundData.data;
 
   return (
-    <div className="p-6 border rounded-lg bg-white shadow-lg">
+    <div className="rounded-lg border bg-white p-6 shadow-lg">
       {/* Fund Name and Information */}
-      <h2 className="text-2xl font-bold mb-4 border-b pb-2">{name}</h2>
+      <h2 className="mb-4 border-b pb-2 text-2xl font-bold">{name}</h2>
       <p>
         <span className="font-bold">Market Code:</span> {marketCode}
       </p>
@@ -130,14 +131,14 @@ const FundDetails = ({ selectedFund }: FundDetailsProps) => {
       {/* Documents */}
       <div className="mt-4">
         <h3 className="font-bold">Documents:</h3>
-        <ul className="flex gap-2 mt-3">
+        <ul className="mt-3 flex gap-2">
           {documents.map((doc: { id: string; url: string; type: string }) => (
             <li key={doc.id}>
               <button
                 onClick={() =>
                   window.open(doc.url, '_blank', 'noopener,noreferrer')
                 }
-                className="bg-blue-700 hover:bg-blue-800 text-white font-bold py-2 px-4 rounded"
+                className="rounded bg-blue-700 px-4 py-2 font-bold text-white hover:bg-blue-800"
               >
                 {doc.type}
               </button>
