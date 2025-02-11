@@ -1,6 +1,7 @@
+import './globals.css';
+
 import type { Metadata } from 'next';
 import Head from 'next/head';
-import './globals.css';
 
 export const metadata: Metadata = {
   title: 'AJ Bell funds - Investment Strategy Selector',
@@ -20,7 +21,7 @@ export default function RootLayout({
           content="black-translucent"
         />
       </Head>
-      <body className="antialiased bg-gradient-to-r from-blue-950 via-blue-900 to-blue-950 p-4">
+      <body className="bg-gradient-to-r from-blue-950 via-blue-900 to-blue-950 p-4 antialiased">
         {children}
       </body>
     </html>
