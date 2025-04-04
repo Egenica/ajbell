@@ -1,5 +1,4 @@
 import type { Metadata } from 'next';
-import Head from 'next/head';
 import './globals.css';
 
 export const metadata: Metadata = {
@@ -9,17 +8,18 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="en">
-      <Head>
+      <head>
         <meta
           name="apple-mobile-web-app-status-bar-style"
           content="black-translucent"
         />
-      </Head>
+        <meta charSet="utf-8" />
+      </head>
       <body className="antialiased bg-gradient-to-r from-blue-950 via-blue-900 to-blue-950 p-4">
         {children}
       </body>

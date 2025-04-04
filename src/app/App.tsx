@@ -1,7 +1,8 @@
 'use client';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import FundSelector from './components/FundSelector/FundSelector';
 import FundDetails from './components/FundDetails/FundDetails';
+
 export default function Home() {
   const [selectedFund, setSelectedFund] = useState<string | null>(null);
 
@@ -10,7 +11,7 @@ export default function Home() {
   };
 
   return (
-    <div className="container mx-auto p-2 md:p-6">
+    <div className="container mx-auto p-4 md:p-6">
       <h1 className="text-4xl font-thin text-white mb-8">
         <span className="font-bold">AJ Bell</span> Investment Strategy Selector
       </h1>
